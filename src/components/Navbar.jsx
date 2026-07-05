@@ -110,7 +110,7 @@ export default function Navbar({
               <Bell size={22} className="cursor-pointer text-gray-400" />
             </button>
             <div title="My Profile" onClick={() => triggerToast("Profile dashboard coming soon!", "info")} style={{ display: 'flex', alignItems: 'center' }}>
-              <CircleUserRound size={40} className="cursor-pointer text-gray-400" />
+              <CircleUserRound size={22} className="cursor-pointer text-gray-400" />
             </div>
           </div>
         </div>

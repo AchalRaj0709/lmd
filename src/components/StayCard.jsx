@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home as HomeIcon, Building, Tent, Heart, MapPin, Zap } from 'lucide-react';
+import { Home as HomeIcon, Building, Tent, Heart, MapPin, Star } from 'lucide-react';
 
 export default function StayCard({ stay, isFav, toggleFavorite, handleOpenBooking }) {
   let CatIconComponent = Building;
@@ -34,7 +34,7 @@ export default function StayCard({ stay, isFav, toggleFavorite, handleOpenBookin
           <span>{stay.location}</span>
         </div>
         <div className="card-rating-row">
-          <Zap className="rating-star" style={{ fill: '#f59e0b', color: '#f59e0b' }} />
+          <Star className="rating-star" style={{ fill: '#f59e0b', color: '#f59e0b' }} />
           <span className="rating-score">{stay.rating}</span>
           <span className="rating-count">({stay.reviews})</span>
         </div>

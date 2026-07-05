@@ -35,23 +35,6 @@ export default function StayGrid({
           </button>
         </div>
 
-        {/* Filter categories tabs */}
-        <div className="deals-filter-bar">
-          {[
-            { filter: 'all', label: 'All Stays' },
-            { filter: 'Hotel', label: 'Hotels' },
-            { filter: 'Villa', label: 'Villas' },
-            { filter: 'Camping', label: 'Camping' }
-          ].map(tab => (
-            <button
-              key={tab.filter}
-              className={`filter-tab ${activeFilter === tab.filter ? 'active' : ''}`}
-              onClick={() => handleCategorySelect(tab.filter)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
 
         {/* Listings Grid */}
         <div className="deals-grid">
