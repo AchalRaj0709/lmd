@@ -1,6 +1,13 @@
 import React from 'react';
-import { ChevronRight, ChevronDown, Info, ShieldCheck, Zap, Headphones, Tag, Building } from 'lucide-react';
+import { ChevronRight, ChevronDown, Info, Zap, Headset, Tag, Building } from 'lucide-react';
 import StayCard from './StayCard';
+
+const ShieldSolidCheck = () => (
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#7c3aed" />
+    <path d="M9 11l2 2 4-4" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
 
 export default function StayGrid({
   activeFilter,
@@ -73,7 +80,7 @@ export default function StayGrid({
         <div className="features-container">
           <div className="feature-item">
             <div className="feature-icon-box shield-purple">
-              <ShieldCheck />
+              <ShieldSolidCheck />
             </div>
             <div className="feature-content">
               <h3 className="feature-title">Verified Properties</h3>
@@ -93,7 +100,7 @@ export default function StayGrid({
 
           <div className="feature-item">
             <div className="feature-icon-box headset-teal">
-              <Headphones />
+              <Headset />
             </div>
             <div className="feature-content">
               <h3 className="feature-title">24/7 Customer Support</h3>

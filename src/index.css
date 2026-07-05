@@ -178,8 +178,12 @@ input {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  color: #8b5cf6;
+  color: var(--text-muted);
   transition: var(--transition);
+}
+
+.nav-item:hover .icon-wrapper {
+  color: var(--text-dark);
 }
 
 .nav-item.active {
@@ -1015,31 +1019,39 @@ input {
 
 /* Features Container Box */
 .features-section {
-  max-width: 1440px;
+  width: 100%;
   margin: 64px auto 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .features-container {
+  max-width: 1176px;
+  height: 123px;
+  margin: 0 auto;
   background-color: #ffffff;
-  border: 1px solid var(--border-main);
-  border-radius: var(--radius-xl);
-  padding: 32px 48px;
+  border: 1.5px solid var(--border-main);
+  border-radius: 12px;
+  padding: 12px 24px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 24px;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .feature-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 
+.feature-item:not(:last-child) {
+  border-right: 1px solid var(--border-main);
+  padding-right: 24px;
+}
+
 .feature-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1047,28 +1059,25 @@ input {
 }
 
 .shield-purple {
-  background-color: #ede9fe;
   color: #7c3aed;
 }
 
 .lightning-gold {
-  background-color: #fef3c7;
   color: #d97706;
 }
 
 .headset-teal {
-  background-color: #e0f2fe;
-  color: #0891b2;
+  color: #7c3aed;
 }
 
 .tag-pink {
-  background-color: #fce7f3;
-  color: var(--primary);
+  color: #db2777;
 }
 
 .feature-icon-box svg {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5px;
 }
 
 .feature-content {
@@ -1973,6 +1982,12 @@ input {
   .features-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    height: auto;
+  }
+
+  .feature-item:not(:last-child) {
+    border-right: none;
+    padding-right: 0;
   }
 }
 
@@ -2070,6 +2085,7 @@ input {
   .features-container {
     grid-template-columns: 1fr;
     padding: 24px 20px;
+    height: auto;
   }
 
   .live-activity-container {
