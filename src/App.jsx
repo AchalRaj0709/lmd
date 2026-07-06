@@ -331,7 +331,7 @@ export default function App() {
     return new Set(JSON.parse(localStorage.getItem('favStays')) || []);
   });
   const [activeFilter, setActiveFilter] = useState('all');
-  const [activeTab, setActiveTab] = useState('stay');
+  const [activeTab, setActiveTab] = useState('home');
   const [showAllDeals, setShowAllDeals] = useState(false);
   const [roomsSoldToday, setRoomsSoldToday] = useState(12);
   const [headerSearchQuery, setHeaderSearchQuery] = useState('');
@@ -491,7 +491,7 @@ export default function App() {
         handleCategorySelect={handleCategorySelect}
       />
 
-      <Hero>
+      <Hero activeTab={activeTab}>
         <SearchWidget 
           widgetParams={widgetParams}
           setWidgetParams={setWidgetParams}
@@ -506,6 +506,8 @@ export default function App() {
       </Hero>
 
       <StayGrid 
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
         activeFilter={activeFilter}
         handleCategorySelect={handleCategorySelect}
         roomsSoldToday={roomsSoldToday}

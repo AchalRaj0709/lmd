@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Send, ShieldCheck, Hotel } from 'lucide-react';
+import { Phone, Send, Check, Lock } from 'lucide-react';
 
 const Facebook = (props) => (
   <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -29,18 +29,24 @@ export default function Footer({ handleNewsletterSubmit }) {
           <h2 className="footer-logo">
             Last <br />
             Minutes <br />
-            Deal<span className="logo-dot">.</span>
+            Deal.
           </h2>
           <p className="footer-brand-text">
-            Premium curated journeys for the spontaneous traveler. Discover hidden gems and luxury deals in real-time.
+            Premium curated journeys for the spontaneous <br />
+            traveler. Discover hidden gems and luxury <br />
+            deals <br />
+            in real-time.
           </p>
           <div className="promo-card">
             <div className="promo-icon-box">
-              <Hotel className="promo-icon" />
+              🏨
             </div>
             <div className="promo-content">
               <h4 className="promo-title">Save More Tonight</h4>
-              <p className="promo-desc">Great stays. Bigger savings. Only on Last Minutes Deal.</p>
+              <p className="promo-desc">
+                Great stays. Bigger savings. <br />
+                Only on Last Minutes Deal.
+              </p>
             </div>
           </div>
         </div>
@@ -85,7 +91,10 @@ export default function Footer({ handleNewsletterSubmit }) {
 
         <div className="footer-col newsletter-col">
           <h3 className="footer-heading">Newsletter</h3>
-          <p className="newsletter-text">Get recent news and updates on best last-minute deals.</p>
+          <p className="newsletter-text">
+            Get recent news and updates on best last-<br />
+            minute deals.
+          </p>
           <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
             <input type="email" name="newsletterEmail" placeholder="Enter your email address" required />
             <button type="submit" className="newsletter-submit-btn" aria-label="Subscribe">
@@ -93,7 +102,7 @@ export default function Footer({ handleNewsletterSubmit }) {
             </button>
           </form>
           <span className="newsletter-note">
-            <ShieldCheck className="note-icon" /> No spam. Unsubscribe anytime.
+            <Lock className="note-icon" size={14} /> No spam. Unsubscribe anytime.
           </span>
 
           {/* Landscape Silhouette Art */}
@@ -135,9 +144,9 @@ export default function Footer({ handleNewsletterSubmit }) {
         <div className="social-connect">
           <span>Connect With Us</span>
           <div className="social-icons">
-            <a href="#" className="social-icon-btn"><Facebook /></a>
-            <a href="#" className="social-icon-btn"><Instagram /></a>
-            <a href="#" className="social-icon-btn"><Twitter /></a>
+            <a href="#" className="social-icon-btn" aria-label="Facebook"><Facebook /></a>
+            <a href="#" className="social-icon-btn" aria-label="Instagram"><Instagram /></a>
+            <a href="#" className="social-icon-btn" aria-label="Twitter"><Twitter /></a>
           </div>
         </div>
 
@@ -145,7 +154,13 @@ export default function Footer({ handleNewsletterSubmit }) {
           <span>We Accept</span>
           <div className="payment-logos">
             <span className="pay-logo visa">VISA</span>
-            <span className="pay-logo mastercard">mastercard</span>
+            <span className="pay-logo mastercard">
+              <span className="mc-circles">
+                <span className="mc-circle red"></span>
+                <span className="mc-circle orange"></span>
+              </span>
+              mastercard
+            </span>
             <span className="pay-logo amex">AMEX</span>
             <span className="pay-logo upi">UPI</span>
             <span className="pay-logo netbanking">NET BANKING</span>
@@ -154,7 +169,7 @@ export default function Footer({ handleNewsletterSubmit }) {
 
         <div className="footer-safety-badge">
           <div className="safety-icon-box">
-            <ShieldCheck className="safety-icon" />
+            <Check className="safety-icon" style={{ width: '16px', height: '16px' }} />
           </div>
           <div className="safety-content">
             <span className="safety-title">Your data is safe with us.</span>

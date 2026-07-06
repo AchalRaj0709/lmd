@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, ChevronDown, Info, Zap, Headset, Tag, Building } from 'lucide-react';
+import { ChevronRight, ChevronDown, Info, Zap, Headset, Tag, Building, Utensils } from 'lucide-react';
 import StayCard from './StayCard';
 
 const ShieldSolidCheck = () => (
@@ -10,6 +10,8 @@ const ShieldSolidCheck = () => (
 );
 
 export default function StayGrid({
+  activeTab,
+  setActiveTab,
   activeFilter,
   handleCategorySelect,
   roomsSoldToday,
@@ -22,24 +24,76 @@ export default function StayGrid({
   handleOpenBooking,
   triggerToast
 }) {
+  const isHome = activeTab === 'home';
+  const renderLimit = isHome ? 18 : visibleStaysLimit;
+  const renderLoadMore = isHome ? false : showLoadMore;
+
   return (
     <>
+      {isHome && (
+        <div className="home-categories-bar">
+          <button className="category-btn-large stay-btn" onClick={() => { setActiveTab('stay'); handleCategorySelect('all'); }}>
+            <div className="large-btn-icon-box">
+              <Building />
+            </div>
+            <div className="large-btn-info">
+              <span className="large-btn-title">Stay</span>
+              <span className="large-btn-sub">Hotels & Villas</span>
+            </div>
+          </button>
+          <button className="category-btn-large buffet-btn" onClick={() => { setActiveTab('buffet'); triggerToast("Buffet deals coming soon!", "info"); }}>
+            <div className="large-btn-icon-box">
+              <Utensils />
+            </div>
+            <div className="large-btn-info">
+              <span className="large-btn-title">Buffet</span>
+              <span className="large-btn-sub">Buffet Deals</span>
+            </div>
+          </button>
+        </div>
+      )}
+
       {/* Live Deals Stays Main Grid */}
       <main className="deals-section">
         <div className="deals-header-row">
           <div className="deals-title-area">
-            <h2 className="section-title">
-              <span className="flame-icon">🔥</span> Live Stay Deals Near You
-            </h2>
-            <p className="section-subtitle">Book now. Check-in today.</p>
+            {isHome ? (
+              <h2 className="section-title">
+                <span className="flame-icon">🔥</span> Live Deals Near You
+              </h2>
+            ) : (
+              <h2 className="section-title">
+                <span className="flame-icon">🔥</span> Live Stay Deals Near You
+              </h2>
+            )}
+            <p className="section-subtitle">
+              {isHome ? "Book now, Check-in today." : "Book now. Check-in today."}
+            </p>
           </div>
-          <button
-            className="view-all-link"
-            onClick={() => { setShowAllDeals(true); triggerToast("Showing all stay listings!", "info"); }}
-          >
-            <span>View All Deals</span>
-            <ChevronRight className="arrow-icon" />
-          </button>
+
+          {isHome ? (
+            <a
+              href="#"
+              className="view-all-deals-link-pink"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab('stay');
+                handleCategorySelect('all');
+                triggerToast("Showing all live stay listings!", "info");
+              }}
+            >
+              <span>View all deals</span>
+              <ChevronRight className="pink-arrow-icon" style={{ width: '16px', height: '16px', strokeWidth: '2.5px' }} />
+            </a>
+          ) : (
+            <button
+              className="view-all-link"
+              onClick={() => { setShowAllDeals(true); triggerToast("Showing all stay listings!", "info"); }}
+            >
+              <span>View All Deals</span>
+              <ChevronRight className="arrow-icon" />
+            </button>
+          )}
         </div>
 
 
@@ -52,7 +106,7 @@ export default function StayGrid({
               <p>Try clearing filters or search queries to find Pune & Lonavala properties.</p>
             </div>
           ) : (
-            filteredStays.slice(0, visibleStaysLimit).map(stay => (
+            filteredStays.slice(0, renderLimit).map(stay => (
               <StayCard
                 key={stay.id}
                 stay={stay}
@@ -65,7 +119,7 @@ export default function StayGrid({
         </div>
 
         {/* Load More Button */}
-        {showLoadMore && (
+        {renderLoadMore && (
           <div className="load-more-container">
             <button className="load-more-btn" onClick={() => setShowAllDeals(true)}>
               <span>Load More Deals</span>
