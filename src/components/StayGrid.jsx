@@ -22,7 +22,8 @@ export default function StayGrid({
   favoritedIds,
   toggleFavorite,
   handleOpenBooking,
-  triggerToast
+  triggerToast,
+  onSelectStay
 }) {
   const isHome = activeTab === 'home';
   const renderLimit = isHome ? 18 : visibleStaysLimit;
@@ -113,6 +114,7 @@ export default function StayGrid({
                 isFav={favoritedIds.has(stay.id)}
                 toggleFavorite={toggleFavorite}
                 handleOpenBooking={handleOpenBooking}
+                onSelect={onSelectStay}
               />
             ))
           )}

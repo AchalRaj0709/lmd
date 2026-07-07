@@ -7,6 +7,7 @@ import FavoriteDrawer from './components/FavoriteDrawer';
 import BookingModal from './components/BookingModal';
 import Footer from './components/Footer';
 import ToastContainer from './components/ToastContainer';
+import StayDetails from './components/StayDetails';
 
 // Stays Data Array
 const INITIAL_STAYS_DATA = [
@@ -353,6 +354,7 @@ export default function App() {
   const [favDrawerOpen, setFavDrawerOpen] = useState(false);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [selectedStay, setSelectedStay] = useState(null);
+  const [selectedStayForDetails, setSelectedStayForDetails] = useState(null);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const [guestName, setGuestName] = useState('');
   const [guestPhone, setGuestPhone] = useState('');
@@ -478,6 +480,38 @@ export default function App() {
   const visibleStaysLimit = showAllDeals ? filteredStays.length : Math.min(filteredStays.length, 18);
   const showLoadMore = filteredStays.length > 18 && !showAllDeals;
 
+  if (selectedStayForDetails) {
+    return (
+      <>
+        <StayDetails 
+          stay={selectedStayForDetails}
+          onBack={() => setSelectedStayForDetails(null)}
+          onBookNow={() => handleOpenBooking(selectedStayForDetails)}
+          isFavorite={favoritedIds.has(selectedStayForDetails.id)}
+          onToggleFavorite={(e) => toggleFavorite(selectedStayForDetails.id, e)}
+        />
+
+        <BookingModal 
+          bookingModalOpen={bookingModalOpen}
+          setBookingModalOpen={setBookingModalOpen}
+          selectedStay={selectedStay}
+          bookingConfirmed={bookingConfirmed}
+          handleConfirmBooking={handleConfirmBooking}
+          guestName={guestName}
+          setGuestName={setGuestName}
+          guestPhone={guestPhone}
+          setGuestPhone={setGuestPhone}
+          checkinDate={checkinDate}
+          setCheckinDate={setCheckinDate}
+        />
+
+        <ToastContainer 
+          toasts={toasts}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar 
@@ -519,6 +553,10 @@ export default function App() {
         toggleFavorite={toggleFavorite}
         handleOpenBooking={handleOpenBooking}
         triggerToast={triggerToast}
+        onSelectStay={(stay) => {
+          setSelectedStayForDetails(stay);
+          window.scrollTo(0, 0);
+        }}
       />
 
       <Footer 

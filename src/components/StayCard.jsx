@@ -1,13 +1,13 @@
 import React from 'react';
 import { Home as HomeIcon, Building, Tent, Heart, MapPin, Star } from 'lucide-react';
 
-export default function StayCard({ stay, isFav, toggleFavorite, handleOpenBooking }) {
+export default function StayCard({ stay, isFav, toggleFavorite, handleOpenBooking, onSelect }) {
   let CatIconComponent = Building;
   if (stay.type === 'Villa') CatIconComponent = HomeIcon;
   if (stay.type === 'Camping') CatIconComponent = Tent;
 
   return (
-    <div className="stay-card">
+    <div className="stay-card" onClick={() => onSelect && onSelect(stay)} style={{ cursor: 'pointer' }}>
       <div className="card-img-wrapper">
         <span className="discount-badge">{stay.discount}</span>
         <button
@@ -48,7 +48,7 @@ export default function StayCard({ stay, isFav, toggleFavorite, handleOpenBookin
             <span className="price-deal">₹{stay.price.toLocaleString('en-IN')}</span>
             <span className="price-original">₹{stay.originalPrice.toLocaleString('en-IN')}</span>
           </div>
-          <button className="book-btn" onClick={() => handleOpenBooking(stay)}>Book Now</button>
+          <button className="book-btn" onClick={(e) => { e.stopPropagation(); handleOpenBooking(stay); }}>Book Now</button>
         </div>
       </div>
     </div>
