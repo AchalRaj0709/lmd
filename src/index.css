@@ -3202,3 +3202,721 @@ vertical-align: middle;
 .booking-bar-cta-btn:hover {
   background: #c21850;
 }
+
+/* ==========================================================================
+   Booking Page View Styles
+   ========================================================================== */
+
+.booking-page-root {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  background: #f9fafb;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 140px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-page-header {
+  background: #ffffff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.booking-back-btn {
+  width: 32;
+height: 38;
+padding-top: 8px;
+padding-right: 8px;
+padding-bottom: 14px;
+padding-left: 8px;
+angle: 0 deg;
+opacity: 1;
+border-radius: 9999px;
+
+}
+
+.booking-back-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.booking-header-titles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.booking-main-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.booking-sub-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0.12px;
+  vertical-align: middle;
+}
+
+.booking-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 16px;
+}
+
+.booking-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-step-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.step-number-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e91e63;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-title-text {
+  font-family: Be Vietnam Pro;
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 28px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.room-form-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.room-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.booking-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-input-label {
+  font-family: Be Vietnam Pro;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0.12px;
+vertical-align: middle;
+
+}
+
+.booking-text-input {
+  border: none;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1f2937;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.booking-text-input:focus {
+  background: #e5e7eb;
+}
+
+.booking-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.booking-select-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1f2937;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-arrow-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.payment-option-card {
+  display: flex;
+  align-items: flex-start;
+  width: 350px;
+  height: 191px;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-sizing: border-box;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-option-card.selected {
+  border: 2px solid #E91E63;
+  background: #FFDAD8;
+}
+
+.payment-option-card.unselected-border {
+  display: flex;
+  align-items: flex-start;
+  width: 350px;
+  height: 148px;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.payment-radio-col {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.payment-radio-outer {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.payment-option-card.selected .payment-radio-outer {
+  border-color: #e91e63;
+}
+
+.payment-radio-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e91e63;
+}
+
+.payment-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.payment-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-option-title {
+  font-family: Be Vietnam Pro;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 22px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.payment-option-card.unselected-border .payment-option-title {
+  color: #111827;
+  font-weight: 600;
+}
+
+.payment-recommended-badge {
+  width: fit-content;
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin: 4px 0;
+}
+
+.payment-option-subtext {
+  font-family: Be Vietnam Pro;
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 20px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.payment-methods-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.payment-pill {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.booking-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-summary-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.summary-stay-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.summary-stay-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summary-stay-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #e91e63;
+  color: #ffffff;
+  width: 94.48px;
+  height: 23px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.summary-stay-name-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.summary-stay-title {
+  font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 25px;
+letter-spacing: 0px;
+vertical-align: middle;
+color: #FFFFFF;
+
+}
+
+.summary-dates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.date-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+}
+
+.date-value-text {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 22px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #111827;
+}
+
+.summary-divider-line {
+  height: 1px;
+  background-color: #f3f4f6;
+  margin: 4px 0;
+}
+
+.summary-guests-badge-row {
+  display: flex;
+}
+
+.summary-guests-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 155.77px;
+  height: 28px;
+  padding: 6px 12px;
+  gap: 8px;
+  border-radius: 9999px;
+  background: #FFDAD8;
+  box-sizing: border-box;
+  opacity: 1;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.12px;
+  vertical-align: middle;
+  color: #E91E63;
+}
+
+.summary-pricing-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pricing-label-text {
+  font-family: Be Vietnam Pro;
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 20px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.pricing-value-text {
+  font-family: Be Vietnam Pro;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 20px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.pricing-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.total-label-text {
+  font-family: Be Vietnam Pro;
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 28px;
+letter-spacing: 0px;
+vertical-align: middle;
+
+}
+
+.total-price-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total-price-value {
+  font-family: Be Vietnam Pro;
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 30px;
+letter-spacing: -0.6px;
+text-align: right;
+vertical-align: middle;
+color: #E91E63;
+
+}
+
+.total-subtext {
+  font-family: Be Vietnam Pro;
+font-weight: 400;
+font-style: Regular;
+font-size: 10px;
+leading-trim: NONE;
+line-height: 15px;
+letter-spacing: 0px;
+text-align: right;
+vertical-align: middle;
+color: #484554;
+;
+}
+
+.best-price-guaranteed-box {
+  display: flex;
+  align-items: center;
+  width: 325px;
+  height: 72px;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(255, 218, 214, 0.2);
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.best-price-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: #B523301A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.best-price-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.best-price-title {
+  font-family: Be Vietnam Pro;
+font-weight: 700;
+font-style: Bold;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0.12px;
+vertical-align: middle;
+color: #1A1C1E;
+
+}
+
+.best-price-desc {
+  font-family: Be Vietnam Pro;
+font-weight: 400;
+font-style: Regular;
+font-size: 10px;
+leading-trim: NONE;
+line-height: 15px;
+letter-spacing: 0px;
+vertical-align: middle;
+color: #484554;
+
+}
+
+.booking-sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 480px;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #f3f4f6;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.savings-alert-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffeef2;
+  color: #e91e63;
+  width: 350px;
+  height: 32px;
+  padding: 8px 16px;
+  gap: 7.99px;
+  border-radius: 9999px;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.savings-pill-text {
+  font-family: Be Vietnam Pro;
+font-weight: 700;
+font-style: Bold;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0.12px;
+vertical-align: middle;
+color: #E91E63;
+
+}
+
+.booking-confirm-cta-btn {
+  width: 350px;
+  height: 56px;
+  padding: 16px 48px;
+  border-radius: 12px;
+  background-color: #e91e63;
+  color: #ffffff;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
+  transition: background 0.2s;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.booking-confirm-cta-btn:hover {
+  background-color: #d81b60;
+}
+
+.secure-checkout-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #6b7280;
+}

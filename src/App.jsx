@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import SearchWidget from './components/SearchWidget';
 import StayGrid from './components/StayGrid';
 import FavoriteDrawer from './components/FavoriteDrawer';
-import BookingModal from './components/BookingModal';
+import BookingPage from './components/BookingPage';
 import Footer from './components/Footer';
 import ToastContainer from './components/ToastContainer';
 import StayDetails from './components/StayDetails';
@@ -352,7 +352,7 @@ export default function App() {
 
   // Modals & Drawers States
   const [favDrawerOpen, setFavDrawerOpen] = useState(false);
-  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [isBookingView, setIsBookingView] = useState(false);
   const [selectedStay, setSelectedStay] = useState(null);
   const [selectedStayForDetails, setSelectedStayForDetails] = useState(null);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
@@ -434,7 +434,7 @@ export default function App() {
     setGuestName('');
     setGuestPhone('');
     setCheckinDate(new Date().toISOString().split('T')[0]);
-    setBookingModalOpen(true);
+    setIsBookingView(true);
   };
 
   // Submit booking Form
@@ -480,6 +480,42 @@ export default function App() {
   const visibleStaysLimit = showAllDeals ? filteredStays.length : Math.min(filteredStays.length, 18);
   const showLoadMore = filteredStays.length > 18 && !showAllDeals;
 
+  const formatDateStr = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return dateStr;
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  };
+
+  if (isBookingView && selectedStay) {
+    return (
+      <>
+        <BookingPage
+          stay={selectedStay}
+          onBack={() => {
+            setIsBookingView(false);
+          }}
+          onConfirmBooking={(primaryGuestName) => {
+            setRoomsSoldToday(prev => prev + 1);
+            triggerToast(`Thank you ${primaryGuestName}! Your stay at ${selectedStay.name} has been successfully booked for ${formatDateStr(checkinDate)}.`, "success");
+            setIsBookingView(false);
+            setSelectedStay(null);
+            setSelectedStayForDetails(null);
+          }}
+          adultCount={adultCount}
+          roomCount={roomCount}
+          checkinDate={checkinDate}
+          checkoutDate={widgetParams.checkout === 'Today' ? new Date().toISOString().split('T')[0] : widgetParams.checkout}
+        />
+        <ToastContainer toasts={toasts} />
+      </>
+    );
+  }
+
   if (selectedStayForDetails) {
     return (
       <>
@@ -489,20 +525,6 @@ export default function App() {
           onBookNow={() => handleOpenBooking(selectedStayForDetails)}
           isFavorite={favoritedIds.has(selectedStayForDetails.id)}
           onToggleFavorite={(e) => toggleFavorite(selectedStayForDetails.id, e)}
-        />
-
-        <BookingModal 
-          bookingModalOpen={bookingModalOpen}
-          setBookingModalOpen={setBookingModalOpen}
-          selectedStay={selectedStay}
-          bookingConfirmed={bookingConfirmed}
-          handleConfirmBooking={handleConfirmBooking}
-          guestName={guestName}
-          setGuestName={setGuestName}
-          guestPhone={guestPhone}
-          setGuestPhone={setGuestPhone}
-          checkinDate={checkinDate}
-          setCheckinDate={setCheckinDate}
         />
 
         <ToastContainer 
@@ -563,19 +585,7 @@ export default function App() {
         handleNewsletterSubmit={handleNewsletterSubmit}
       />
 
-      <BookingModal 
-        bookingModalOpen={bookingModalOpen}
-        setBookingModalOpen={setBookingModalOpen}
-        selectedStay={selectedStay}
-        bookingConfirmed={bookingConfirmed}
-        handleConfirmBooking={handleConfirmBooking}
-        guestName={guestName}
-        setGuestName={setGuestName}
-        guestPhone={guestPhone}
-        setGuestPhone={setGuestPhone}
-        checkinDate={checkinDate}
-        setCheckinDate={setCheckinDate}
-      />
+      {/* BookingModal removed and replaced with BookingPage full-screen flow */}
 
       <FavoriteDrawer 
         favDrawerOpen={favDrawerOpen}
