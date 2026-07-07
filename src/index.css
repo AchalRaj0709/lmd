@@ -3911,12 +3911,879 @@ color: #E91E63;
   background-color: #d81b60;
 }
 
-.secure-checkout-tag {
+/* ========================================== */
+/* STAY PAYMENT SUCCESSFUL PAGE               */
+/* ========================================== */
+.success-page-root {
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F6F8;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 72px; /* For bottom nav bar */
+}
+
+.success-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: 390px;
+  width: 100%;
+  height: 106px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #F3F4F6;
+  padding-top: 39px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.success-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header brand logo styles matching Plus Jakarta Sans specs */
+.success-page-header .logo-last {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.45px;
+  vertical-align: middle;
+}
+
+.success-page-header .logo-minutes {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.45px;
+  vertical-align: middle;
+  color: #E91E63;
+}
+
+.success-page-header .logo-deal {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.45px;
+  vertical-align: middle;
+}
+
+.success-page-header .logo-dot,
+.logo-dot {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.45px;
+  vertical-align: middle;
+  color: #E91E63;
+  display: inline;
+}
+
+.success-header-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.success-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.success-icon-btn:hover {
+  opacity: 0.7;
+}
+
+.success-page-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.success-page-inner-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Card Common Styling */
+.success-property-detail-card,
+.success-important-info-card,
+.success-next-steps-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  width: 358px;
+}
+
+/* Card 1: Success Check Banner */
+.success-main-card {
+  width: 358px;
+  height: 438px;
+  border-radius: 12px;
+  padding-top: 48px;
+  padding-right: 24px;
+  padding-bottom: 48px;
+  padding-left: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: radial-gradient(82.51% 62.86% at 50% 50%, #F0FDF4 0%, #FFFFFF 70%);
+
+}
+
+.success-badge-circle-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 10px 15px rgba(34, 197, 94, 0.15));
+}
+
+.success-title-wrap {
+  width: 310px;
+  height: 85px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-bold-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #191C1E;
+  margin: 0;
+}
+
+.success-subtext-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25.6px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #5B3F43;
+  width: 312px;
+  height: 52px;
+  margin: 0 0 16px 0;
+  box-sizing: border-box;
+}
+
+.success-booking-id-outer {
+  width: 290.34px;
+  height: 109px; 
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.success-booking-id-box {
+  width: 290.34px;
+  height: 77px;
+  border-radius: 12px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  gap: 12px;
+  box-sizing: border-box;
+  border: 1px solid rgba(228, 189, 194, 0.3); /* #E4BDC24D */
+  background-color: #F2F4F7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-id-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #5B3F43;
+}
+
+.booking-id-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25.2px;
+  letter-spacing: 0.9px;
+  text-align: center;
+  vertical-align: middle;
+  color: #15803D;
+}
+/* Card 2: Details Grid */
+.success-info-grid-card {
+  width: 358px;
+  height: 266px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid rgba(228, 189, 194, 0.2); /* #E4BDC233 */
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05); /* #0000000D */
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.success-grid-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.success-grid-cell .success-cell-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+.success-grid-cell .success-cell-icon-wrap svg {
+  display: block;
+}
+
+.success-grid-cell .success-cell-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-grid-cell .success-cell-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #5B3F43;
+  margin: 0 0 4px 0;
+}
+
+.success-grid-cell .success-cell-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #191C1E;
+  margin: 0;
+}
+
+.success-date-cell {
+  /* Top-left cell */
+}
+
+.success-time-cell {
+  border-left: 1px solid rgba(228, 189, 194, 0.2); /* #E4BDC233 */
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.success-people-cell {
+  border-top: 1px solid rgba(228, 189, 194, 0.2); /* #E4BDC233 */
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 16px;
+}
+
+.success-meal-cell {
+  border-left: 1px solid rgba(228, 189, 194, 0.2); /* #E4BDC233 */
+  border-top: 1px solid rgba(228, 189, 194, 0.2); /* #E4BDC233 */
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 16px;
+}
+
+/* Card 3: Hotel Details & cost breakdown */
+.success-property-detail-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-property-images-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.success-thumb-img {
+  flex: 1;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.success-property-core-body {
+  margin-bottom: 16px;
+}
+
+.success-property-header-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.success-property-name {
+  font-family: Inter;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 25px;
+letter-spacing: 0px;
+vertical-align: middle;
+color: #111827;
+}
+
+.success-confirmed-badge-label {
+  width: 93;
+height: 26;
+border-radius: 9999px;
+padding-top: 4px;
+padding-right: 12px;
+padding-bottom: 4px;
+padding-left: 12px;
+angle: 0 deg;
+opacity: 1;
+border-width: 1px;
+color: #15803D;
+background: #DCFCE7;
+border: 1px solid #BBF7D0
+}
+
+.success-location-row {
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-bottom: 8px;
+  color: #5B5B7E;
+}
+
+.success-location-text {
   font-family: 'Inter', sans-serif;
-  font-size: 10px;
   font-weight: 400;
-  color: #6b7280;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #5B5B7E;
+}
+
+.success-location-icon {
+  width: 12px;
+  height: 15px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.success-hotel-pill-text {
+  width: 64;
+height: 24;
+border-radius: 9999px;
+padding-top: 4px;
+padding-right: 12px;
+padding-bottom: 4px;
+padding-left: 12px;
+angle: 0 deg;
+opacity: 1;
+background: #6767671A;
+font-family: Plus Jakarta Sans;
+font-weight: 700;
+font-style: Bold;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0px;
+vertical-align: middle;
+color: #673AB7;
+width: 40;
+height: 16;
+angle: 0 deg;
+opacity: 1;
+
+}
+
+.success-price-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 0 16px 0;
+}
+
+.success-breakdown-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.success-price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.price-desc-label {
+  font-family: Plus Jakarta Sans;
+font-weight: 400;
+font-style: Regular;
+font-size: 12px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0px;
+text-align: center;
+vertical-align: middle;
+color:#5B3F43;
+}
+
+.price-val-amount {
+  font-family: Plus Jakarta Sans;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: center;
+vertical-align: middle;
+
+}
+
+.success-price-row.discount-row .price-val-amount,
+.success-price-row.offer-row .price-val-amount {
+  color: #15803D;
+}
+
+.success-total-pink-box {
+  width: 308px;
+  height: 67px;
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: #E91E63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.success-total-pink-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFFFFF;
+  height: 16px;
+  box-sizing: border-box;
+}
+
+.success-total-pink-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31.2px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFFFFF;
+}
+
+/* Card 4: Important Info */
+.success-info-card-header {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25.2px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #191C1E;
+  margin: 0 0 16px 0;
+}
+
+.important-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-list-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info-list-icon-wrap {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-list-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #5B3F43;
+}
+
+/* Card 5: Next Steps */
+.success-steps-card-header {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25.2px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #191C1E;
+  margin: 0 0 16px 0;
+}
+
+.steps-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.steps-checklist-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.success-green-tick {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.steps-item-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #5B3F43;
+}
+
+.steps-wallet-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+
+.success-wallet-subtext {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #5B3F43;
+  margin-bottom: 8px;
+  display: block;
+  text-align: left;
+}
+
+.steps-add-wallet-btn {
+  width: 157.91px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  gap: 8px;
+  background-color: #191C1E;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+.steps-add-wallet-btn:hover {
+  background-color: #2D3139;
+}
+
+/* Card 6: Need Help Banner */
+.success-need-help-banner {
+  background-color: #E1E0FF;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  width: 358px;
+}
+
+.help-left-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.help-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFFFFF33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.help-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #171837;
+}
+
+.help-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #5B5B7E;
+}
+
+.help-action-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #E91E63;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.help-action-link:hover {
+  opacity: 0.8;
+}
+
+/* Footer outlined Action Buttons */
+.success-actions-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 358px;
+  height: 74px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.success-action-btn {
+  width: 175px;
+  height: 74px;
+  border-radius: 12px;
+  padding: 12px 16px;
+  gap: 8px;
+  border-width: 1px;
+  border: 1px solid #E91E63;
+  background: transparent;
+  color: #E91E63;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.success-action-btn:hover {
+  background-color: rgba(233, 30, 99, 0.05);
+}
+
+/* Sticky Bottom Navigation Bar */
+.success-bottom-navigation-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  height: 67px;
+  background: #F7F9FC;
+  border-top: 1px solid #E4BDC2;
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.success-bottom-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 8px;
+  padding-right: 31.27px;
+  padding-bottom: 8px;
+  padding-left: 31.27px;
+  gap: 30.5px;
+  box-sizing: border-box;
+}
+
+.success-nav-item {
+  width: 48.05px;
+  height: 50px;
+  border-radius: 12px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.success-nav-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.4px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #4B5563;
+}
+
+.success-nav-item.active-bookings-tab {
+  width: auto;
+  flex: none;
+}
+
+.bookings-nav-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: #E2165F1A;
+  width: 78.55px;
+  height: 38px;
+  border-radius: 12px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+}
+
+.bookings-nav-pill svg {
+  width: 18px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.text-pink {
+  color: #E91E63 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.4px;
+  letter-spacing: 0px;
+  vertical-align: middle;
 }

@@ -5,6 +5,7 @@ import SearchWidget from './components/SearchWidget';
 import StayGrid from './components/StayGrid';
 import FavoriteDrawer from './components/FavoriteDrawer';
 import BookingPage from './components/BookingPage';
+import PaymentSuccessPage from './components/PaymentSuccessPage';
 import Footer from './components/Footer';
 import ToastContainer from './components/ToastContainer';
 import StayDetails from './components/StayDetails';
@@ -353,6 +354,7 @@ export default function App() {
   // Modals & Drawers States
   const [favDrawerOpen, setFavDrawerOpen] = useState(false);
   const [isBookingView, setIsBookingView] = useState(false);
+  const [isSuccessView, setIsSuccessView] = useState(false);
   const [selectedStay, setSelectedStay] = useState(null);
   const [selectedStayForDetails, setSelectedStayForDetails] = useState(null);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
@@ -491,6 +493,23 @@ export default function App() {
     });
   };
 
+  if (isSuccessView && selectedStay) {
+    return (
+      <PaymentSuccessPage
+        stay={selectedStay}
+        checkinDate={checkinDate}
+        checkoutDate={widgetParams.checkout === 'Today' ? new Date().toISOString().split('T')[0] : widgetParams.checkout}
+        adultCount={adultCount}
+        roomCount={roomCount}
+        onGoHome={() => {
+          setIsSuccessView(false);
+          setSelectedStay(null);
+          setSelectedStayForDetails(null);
+        }}
+      />
+    );
+  }
+
   if (isBookingView && selectedStay) {
     return (
       <>
@@ -501,10 +520,8 @@ export default function App() {
           }}
           onConfirmBooking={(primaryGuestName) => {
             setRoomsSoldToday(prev => prev + 1);
-            triggerToast(`Thank you ${primaryGuestName}! Your stay at ${selectedStay.name} has been successfully booked for ${formatDateStr(checkinDate)}.`, "success");
             setIsBookingView(false);
-            setSelectedStay(null);
-            setSelectedStayForDetails(null);
+            setIsSuccessView(true);
           }}
           adultCount={adultCount}
           roomCount={roomCount}

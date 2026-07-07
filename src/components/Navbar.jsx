@@ -30,7 +30,7 @@ export default function Navbar({
               <div className="logo-stacked">
                 <span className="logo-last">Last</span>
                 <span className="logo-minutes">Minutes</span>
-                <span className="logo-deal">Deal</span>
+                <span className="logo-deal">Deal<span className="logo-dot">.</span></span>
               </div>
             </a>
           </div>
