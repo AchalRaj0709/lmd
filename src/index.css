@@ -474,43 +474,49 @@ input {
 
 /* Home Categories Bar */
 .home-categories-bar {
-  max-width: 1176px;
-  margin: 40px auto 0 auto;
   display: flex;
   justify-content: center;
-  gap: 60px;
+  align-items: center;
+  gap: 24px;
+  margin: 40px auto 30px auto;
   padding: 0 24px;
+  width: max-content;
 }
 
 .category-btn-large {
   display: flex;
   align-items: center;
-  gap: 20px;
-  width: 280px;
-  height: 84px;
+  gap: 16px;
+  width: 240px;
+  height: 80px;
   border-radius: 16px;
-  padding: 16px 40px;
+  padding: 16px 24px;
   cursor: pointer;
-  border: none;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-shadow: none;
 }
 
 .category-btn-large.stay-btn {
-  background-color: #f3f0ff;
+  background-color: #F2ECFA;
+  border: 1px solid #DCD1ED;
 }
 
 .category-btn-large.stay-btn:hover {
-  background-color: #eae5ff;
+  background-color: #EAE1FA;
+  border-color: #C8B9E6;
   transform: translateY(-2px);
 }
 
 .category-btn-large.buffet-btn {
-  background-color: #fff0f5;
+  background-color: #FCEBF3;
+  border: 1px solid #FCD4E8;
 }
 
 .category-btn-large.buffet-btn:hover {
-  background-color: #ffe5ee;
+  background-color: #FADEEC;
+  border-color: #F9BEDD;
   transform: translateY(-2px);
 }
 
@@ -519,19 +525,14 @@ input {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.category-btn-large.stay-btn .large-btn-icon-box {
-  color: #7c3aed;
-}
-
-.category-btn-large.buffet-btn .large-btn-icon-box {
-  color: #e31c5f;
+  width: 32px;
+  height: 32px;
 }
 
 .large-btn-icon-box svg {
-  width: 28px;
-  height: 28px;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .large-btn-info {
@@ -541,15 +542,27 @@ input {
 }
 
 .large-btn-title {
-  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
   font-weight: 700;
-  color: #1f2937;
+  line-height: 22px;
+  color: #1F2937;
 }
 
 .large-btn-sub {
-  font-size: 12px;
-  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 17px;
   margin-top: 2px;
+}
+
+.category-btn-large.stay-btn .large-btn-sub {
+  color: #7A728E;
+}
+
+.category-btn-large.buffet-btn .large-btn-sub {
+  color: #A26880;
 }
 
 /* Pink View All Deals Link */
@@ -1224,7 +1237,7 @@ input {
 }
 
 .features-container {
-  max-width: 1176px;
+  max-width: 1400px;
   height: 123px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -1273,8 +1286,6 @@ input {
 }
 
 .feature-icon-box svg {
-  width: 32px;
-  height: 32px;
   stroke-width: 1.5px;
 }
 
@@ -1601,28 +1612,36 @@ input {
 }
 
 .footer-silhouette {
-  width: 100%;
-  height: auto;
-  max-height: 100px;
+  width: 285px;
+  height: 190px;
+  opacity: 1;
   display: block;
+  object-fit: contain;
 }
 
 .newsletter-form {
   position: relative;
   display: flex;
-  background-color: white;
-  border-radius: var(--radius-full);
-  padding: 4px;
-  width: 100%;
+  align-items: center;
+  width: 268px;
+  height: 44px;
+  opacity: 1;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-sizing: border-box;
   z-index: 2;
 }
 
 .newsletter-form input {
-  padding: 10px 48px 10px 18px;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 0 44px 0 16px;
   font-size: 13px;
   color: var(--text-dark);
-  background: none;
-  width: 100%;
+  box-sizing: border-box;
 }
 
 .newsletter-form input::placeholder {
@@ -1631,27 +1650,32 @@ input {
 
 .newsletter-submit-btn {
   position: absolute;
-  right: 4px;
-  top: 4px;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  background-color: var(--primary);
+  right: 6px;
+  top: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #FF1464;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 .newsletter-submit-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: #E11D48;
   transform: scale(1.05);
 }
 
 .newsletter-submit-btn svg {
   width: 16px;
   height: 16px;
+  display: block;
 }
 
 .newsletter-note {
@@ -4786,4 +4810,82 @@ vertical-align: middle;
   line-height: 14.4px;
   letter-spacing: 0px;
   vertical-align: middle;
+}
+
+/* --- FIGMA DESIGN SYSTEM MATCH OVERRIDES --- */
+
+/* Search Widget Container & Search Widget */
+.search-widget-container {
+  max-width: 1024px;
+}
+.search-widget {
+  max-width: 1024px;
+  height: 120px !important;
+  gap: 24px;
+  opacity: 1;
+  border-radius: 16px;
+  padding: 32px !important;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  max-width: 100%;
+  height: 600px !important;
+  opacity: 1;
+  box-sizing: border-box;
+}
+.hero-section.home-hero {
+  height: 600px !important;
+}
+
+/* Cleaned up duplicate Home Categories Bar styling rules */
+
+/* Font Live Deals Near You */
+.deals-section .section-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  line-height: 36px !important;
+  color: #1F2937 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* View All Deals */
+.view-all-deals-link-pink span {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #FF1464 !important;
+}
+
+/* Features Container Box (4 Icons Div Below Listings) */
+.features-container {
+  max-width: 1176px;
+  width: 100%;
+  height: 123px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-width: 1.5px;
+  border-radius: 12px;
+  background: #FBF9FE;
+  border: 1.5px solid #F0F0F0;
+  box-sizing: border-box;
+}
+
+/* Live Activity Containing Div */
+.live-activity-container {
+  max-width: 1400px;
+  width: 100%;
+  height: 64px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-width: 1.5px;
+  border-radius: 12px;
+  background: #FBF9FE;
+  border: 1.5px solid #F0F0F0;
+  box-sizing: border-box;
 }
